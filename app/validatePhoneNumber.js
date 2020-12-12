@@ -2,7 +2,24 @@
 
 /* The idea here was that in a web environment I would just want to call one function
 to do all of the validating. So in this function, if at any point the input does 
-not pass, it fails the whole test. */
+not pass, it fails the whole test. 
+
+What are the rules?
+
+numeric
+10 digits
+
+Test Plan 
+
+Input 				    Expected Output
+    				    false
+"515-555-0000"	    	false
+515555000.0			    false
+5155550000		    	true
+5155550000 (10 numbers)	true 
+51555500000			    false
+
+*/
 
 var validatePhoneNumber = function(inValue){
 
